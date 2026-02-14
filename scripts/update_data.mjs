@@ -28,7 +28,6 @@ async function fetchValetSeries(seriesId, { recent = 260 } = {}) {
     headers: { "User-Agent": "housing-metrics-watch/1.0 (GitHub Actions)" },
   });
 
-  // fail loudly if network/API fails
   if (!res.ok) {
     const text = await res.text().catch(() => "");
     throw new Error(`BoC fetch failed for ${seriesId}: ${res.status} ${res.statusText}\n${text.slice(0, 200)}`);
@@ -48,7 +47,85 @@ async function fetchValetSeries(seriesId, { recent = 260 } = {}) {
   return { seriesId, points, latest: points.at(-1) ?? null };
 }
 
-// Simple deterministic-ish PRNG for demo listings
+/** -------- StatCan WDS (NHPI) -------- **/
+
+async function statcanPost(method, bodyObj) {
+  const url = `https://www150.statcan.gc.ca/t1/wds/rest/${method}`;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(bodyObj),
+  });
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(`StatCan ${method} failed: ${res.status} ${res.statusText}\n${text.slice(0, 200)}`);
+  }
+  return res.json();
+}
+
+function pickMember(dim, wantSubstrings) {
+  const members = dim?.member || [];
+  const lower = wantSubstrings.map((s) => s.toLowerCase());
+  return members.find((m) => lower.every((s) => (m.memberNameEn || "").toLowerCase().includes(s)));
+}
+
+async function fetchVancouverNHPI({ months = 180 } = {}) {
+  // NHPI table 18-10-0205-01 => cube productId is commonly 18100205
+  const productId = 18100205;
+
+  const metaArr = await statcanPost("getCubeMetadata", [{ productId }]);
+  const meta = metaArr?.[0]?.object;
+  if (!meta?.dimension) throw new Error("StatCan cube metadata missing dimensions");
+
+  const dims = meta.dimension;
+
+  // Find geography dimension
+  const geoDim = dims.find((d) => (d.dimensionNameEn || "").toLowerCase().includes("geography"));
+  if (!geoDim) throw new Error("Could not find Geography dimension in NHPI metadata");
+
+  // Geography: Vancouver (CMA)
+  const geoMember = pickMember(geoDim, ["vancouver"]);
+  if (!geoMember) throw new Error("Could not find 'Vancouver' in Geography members");
+
+  // For other dims, pick “total/all” if possible, otherwise first member
+  const pickTotalish = (dim) => {
+    if (!dim) return null;
+    return (
+      pickMember(dim, ["total"]) ||
+      pickMember(dim, ["all"]) ||
+      dim.member?.[0] ||
+      null
+    );
+  };
+
+  const membersByDim = dims.map((dim) => {
+    if (dim === geoDim) return geoMember;
+    return pickTotalish(dim);
+  });
+
+  const coordinate = membersByDim.map((m) => String(m.memberId)).join(".");
+
+  const dataArr = await statcanPost("getDataFromCubePidCoordAndLatestNPeriods", [
+    { productId, coordinate, latestN: months },
+  ]);
+
+  const obj = dataArr?.[0]?.object;
+  const pointsRaw = obj?.vectorDataPoint || [];
+  const points = pointsRaw
+    .map((dp) => ({ date: (dp.refPer || "").slice(0, 10), value: Number(dp.value) }))
+    .filter((p) => p.date && Number.isFinite(p.value));
+
+  return {
+    productId,
+    coordinate,
+    points,
+    latest: points.at(-1) || null,
+    note: "New Housing Price Index (Dec 2016=100), Vancouver (CMA), via StatCan WDS (table 18-10-0205-01).",
+  };
+}
+
+/** -------- Demo listings (still synthetic) -------- **/
+
 function rand(seed) {
   let t = seed + 0x6d2b79f5;
   return () => {
@@ -91,6 +168,7 @@ function generateListings(seed = Date.now()) {
     if (r() < 0.06) ppsf *= 0.78; // inject “good deal” outliers
     const price = Math.round((ppsf * sqft) / 1000) * 1000;
 
+    // NOTE: url is null in demo data. Replace later with real posting URLs.
     listings.push({
       id: `van-${seed}-${i}`,
       neighborhood,
@@ -124,25 +202,30 @@ function generateListings(seed = Date.now()) {
   return listings.sort((a, b) => (b.dealScore ?? 0) - (a.dealScore ?? 0));
 }
 
+/** -------- main -------- **/
+
 async function main() {
   console.log("OUT_PATH =", OUT_PATH);
 
   const now = new Date().toISOString();
 
-  const [prime, mort5y, overnight] = await Promise.all([
+  const [prime, mort5y, overnight, nhpiVancouver] = await Promise.all([
     fetchValetSeries(SERIES.prime, { recent: 260 }),
     fetchValetSeries(SERIES.mort5y, { recent: 260 }),
     fetchValetSeries(SERIES.overnight, { recent: 520 }),
+    fetchVancouverNHPI({ months: 180 }),
   ]);
 
   const out = {
     generatedAt: now,
     locale: LOCALE,
     rates: { prime, mort5y, overnight },
+    homePrice: { nhpiVancouver },
     listings: generateListings(),
     notes: {
       ratesSource: "Bank of Canada Valet API",
-      listingsSource: "Synthetic demo listings (replace later)",
+      homePriceSource: "StatCan WDS (NHPI table 18-10-0205-01)",
+      listingsSource: "Synthetic demo listings (replace later with real feed + urls)",
     },
   };
 
@@ -151,6 +234,7 @@ async function main() {
   const stat = fs.statSync(OUT_PATH);
   console.log(`Wrote latest.json (${stat.size} bytes) at ${now}`);
   console.log(`Prime latest:`, out.rates.prime.latest);
+  console.log(`NHPI latest:`, out.homePrice.nhpiVancouver.latest);
 }
 
 main().catch((e) => {

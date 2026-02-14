@@ -9,7 +9,9 @@
 <body>
   <header class="wrap">
     <h1>Housing Metrics Watch</h1>
-    <div class="sub">Locale: <b>Vancouver, BC, Canada</b></div>
+    <div class="sub">
+      <span class="badge">Locale</span> <b>Vancouver, BC, Canada</b>
+    </div>
     <div id="meta" class="sub"></div>
   </header>
 
@@ -17,7 +19,23 @@
     <section class="grid" id="rates"></section>
 
     <section class="card">
-      <h2>Deal Finder (demo listings)</h2>
+      <h2>Trends</h2>
+      <div class="charts">
+        <div>
+          <div class="k">Interest rates (weekly)</div>
+          <canvas id="chartRates" width="1000" height="320"></canvas>
+        </div>
+
+        <div>
+          <div class="k">Housing price index (monthly)</div>
+          <canvas id="chartHome" width="1000" height="320"></canvas>
+          <div class="small" id="homeNote"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Deal Finder</h2>
       <div class="controls">
         <label>
           Min deal score: <b id="minScoreLabel">20</b>
@@ -53,7 +71,7 @@
       </table>
 
       <p class="foot">
-        Listings are synthetic demo data. Interest rate data is pulled from the Bank of Canada Valet API.
+        Listings are demo data unless you wire in real URLs in the pipeline. Interest rates are from BoC Valet API, and housing prices use StatCan NHPI.
       </p>
     </section>
   </main>

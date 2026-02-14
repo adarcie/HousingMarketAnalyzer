@@ -1,9 +1,9 @@
-name: Refresh data (rates + deals)
+name: Refresh data (rates + prices + deals)
 
 on:
   workflow_dispatch:
   schedule:
-    # Runs in UTC. Adjust anytime you like.
+    # UTC time. Adjust as you like.
     - cron: "10 16 * * *"
 
 permissions:
@@ -22,16 +22,7 @@ jobs:
           node-version: 20
 
       - name: Update data
-        run: |
-          node -v
-          node scripts/update_data.mjs
-          echo "---- ls docs ----"
-          ls -la docs || true
-          echo "---- ls docs/data ----"
-          ls -la docs/data || true
-          echo "---- latest.json (first 60 lines) ----"
-          sed -n '1,60p' docs/data/latest.json || true
-
+        run: node scripts/update_data.mjs
 
       - name: Commit & push if changed
         run: |
