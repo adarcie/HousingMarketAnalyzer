@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-02-14T00:00:00.000Z",
+  "locale": { "name": "Vancouver, BC, Canada", "currency": "CAD" },
+  "rates": {
+    "prime": { "seriesId": "V80691311", "points": [], "latest": null },
+    "mort5y": { "seriesId": "V80691335", "points": [], "latest": null },
+    "overnight": { "seriesId": "V39079", "points": [], "latest": null }
+  },
+  "listings": [],
+  "notes": { "ratesSource": "placeholder", "listingsSource": "placeholder" }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vancouver Housing Metrics Watch</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Housing Metrics Watch</h1>
+    <div class="sub">Locale: <b>Vancouver, BC, Canada</b></div>
+    <div id="meta" class="sub"></div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid" id="rates"></section>
+
+    <section class="card">
+      <h2>Deal Finder (demo listings)</h2>
+      <div class="controls">
+        <label>
+          Min deal score: <b id="minScoreLabel">20</b>
+          <input id="minScore" type="range" min="0" max="60" value="20" />
+        </label>
+
+        <label>
+          Max days on market: <b id="maxDomLabel">30</b>
+          <input id="maxDom" type="range" min="0" max="90" value="30" />
+        </label>
+
+        <div class="sub right">
+          Showing <b id="count">0</b> flagged listings
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Neighborhood</th>
+            <th>Beds</th>
+            <th>Sqft</th>
+            <th>Price</th>
+            <th>$/sqft</th>
+            <th>z</th>
+            <th>DOM</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+
+      <p class="foot">
+        Listings are synthetic demo data. Interest rate data is pulled from the Bank of Canada Valet API.
+      </p>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
