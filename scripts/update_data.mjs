@@ -1,3 +1,9 @@
+// scripts/update_data.mjs
+// Generates docs/data/latest.json for GitHub Pages
+// - Bank of Canada rates via Valet API
+// - Vancouver NHPI (New Housing Price Index) via StatCan WDS (best-effort; won’t fail the whole run)
+// - Demo listings with outlier/deal scoring (replace later with real listings + url)
+
 import fs from "node:fs";
 import path from "node:path";
 
@@ -22,6 +28,7 @@ function writeJsonAtomic(filePath, obj) {
   fs.renameSync(tmp, filePath);
 }
 
+/** -------------------- Bank of Canada (Valet API) -------------------- **/
 async function fetchValetSeries(seriesId, { recent = 260 } = {}) {
   const url = `https://www.bankofcanada.ca/valet/observations/${seriesId}/json?recent=${recent}`;
   const res = await fetch(url, {
@@ -30,7 +37,9 @@ async function fetchValetSeries(seriesId, { recent = 260 } = {}) {
 
   if (!res.ok) {
     const text = await res.text().catch(() => "");
-    throw new Error(`BoC fetch failed for ${seriesId}: ${res.status} ${res.statusText}\n${text.slice(0, 200)}`);
+    throw new Error(
+      `BoC fetch failed for ${seriesId}: ${res.status} ${res.statusText}\n${text.slice(0, 200)}`
+    );
   }
 
   const json = await res.json();
@@ -47,8 +56,7 @@ async function fetchValetSeries(seriesId, { recent = 260 } = {}) {
   return { seriesId, points, latest: points.at(-1) ?? null };
 }
 
-/** -------- StatCan WDS (NHPI) -------- **/
-
+/** -------------------- StatCan WDS (NHPI) -------------------- **/
 async function statcanPost(method, bodyObj) {
   const url = `https://www150.statcan.gc.ca/t1/wds/rest/${method}`;
   const res = await fetch(url, {
@@ -56,9 +64,12 @@ async function statcanPost(method, bodyObj) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(bodyObj),
   });
+
   if (!res.ok) {
     const text = await res.text().catch(() => "");
-    throw new Error(`StatCan ${method} failed: ${res.status} ${res.statusText}\n${text.slice(0, 200)}`);
+    throw new Error(
+      `StatCan ${method} failed: ${res.status} ${res.statusText}\n${text.slice(0, 300)}`
+    );
   }
   return res.json();
 }
@@ -66,12 +77,25 @@ async function statcanPost(method, bodyObj) {
 function pickMember(dim, wantSubstrings) {
   const members = dim?.member || [];
   const lower = wantSubstrings.map((s) => s.toLowerCase());
-  return members.find((m) => lower.every((s) => (m.memberNameEn || "").toLowerCase().includes(s)));
+  return members.find((m) =>
+    lower.every((s) => (m.memberNameEn || "").toLowerCase().includes(s))
+  );
 }
 
+function pickTotalish(dim) {
+  if (!dim) return null;
+  return (
+    pickMember(dim, ["total"]) ||
+    pickMember(dim, ["all"]) ||
+    pickMember(dim, ["all", "items"]) ||
+    dim.member?.[0] ||
+    null
+  );
+}
+
+// Best-effort NHPI Vancouver (CMA). If it fails, returns null (and workflow continues).
 async function fetchVancouverNHPI({ months = 180 } = {}) {
-  // NHPI table 18-10-0205-01 => cube productId is commonly 18100205
-  const productId = 18100205;
+  const productId = 18100205; // table 18-10-0205-01 cube id commonly used by WDS
 
   const metaArr = await statcanPost("getCubeMetadata", [{ productId }]);
   const meta = metaArr?.[0]?.object;
@@ -79,31 +103,57 @@ async function fetchVancouverNHPI({ months = 180 } = {}) {
 
   const dims = meta.dimension;
 
-  // Find geography dimension
-  const geoDim = dims.find((d) => (d.dimensionNameEn || "").toLowerCase().includes("geography"));
+  const geoDim = dims.find((d) =>
+    (d.dimensionNameEn || "").toLowerCase().includes("geography")
+  );
   if (!geoDim) throw new Error("Could not find Geography dimension in NHPI metadata");
 
-  // Geography: Vancouver (CMA)
+  // Geography: pick Vancouver (CMA). If there are multiple “Vancouver …”, take the first that includes vancouver.
   const geoMember = pickMember(geoDim, ["vancouver"]);
   if (!geoMember) throw new Error("Could not find 'Vancouver' in Geography members");
 
-  // For other dims, pick “total/all” if possible, otherwise first member
-  const pickTotalish = (dim) => {
-    if (!dim) return null;
-    return (
-      pickMember(dim, ["total"]) ||
-      pickMember(dim, ["all"]) ||
-      dim.member?.[0] ||
-      null
-    );
-  };
+  // Safer per-dimension member selection. The earlier “invalid coordinate” came from
+  // selecting a combination StatCan doesn’t allow; we bias to “total/all” and pad coordinate.
+  function pickForDim(dim) {
+    const name = (dim.dimensionNameEn || "").toLowerCase();
 
-  const membersByDim = dims.map((dim) => {
     if (dim === geoDim) return geoMember;
-    return pickTotalish(dim);
-  });
 
-  const coordinate = membersByDim.map((m) => String(m.memberId)).join(".");
+    // For “component” dims, prefer total
+    if (name.includes("component")) {
+      return (
+        pickMember(dim, ["total"]) ||
+        pickMember(dim, ["all"]) ||
+        dim.member?.[0] ||
+        null
+      );
+    }
+
+    // For dwelling type, prefer total
+    if (name.includes("dwelling") && name.includes("type")) {
+      return pickTotalish(dim);
+    }
+
+    // For measure/index dims, prefer the index itself or total
+    return (
+      pickMember(dim, ["new housing price index"]) ||
+      pickTotalish(dim)
+    );
+  }
+
+  const membersByDim = dims.map(pickForDim);
+  if (membersByDim.some((m) => !m)) {
+    throw new Error("Could not select members for all NHPI dimensions");
+  }
+
+  // Coordinate: dot-separated memberIds in dim order.
+  // WDS examples commonly pad with trailing zeros to 10 positions.
+  const parts = membersByDim.map((m) => String(m.memberId));
+  while (parts.length < 10) parts.push("0");
+  const coordinate = parts.join(".");
+
+  // Helpful debug line (shows in Action logs)
+  console.log("NHPI coordinate =", coordinate);
 
   const dataArr = await statcanPost("getDataFromCubePidCoordAndLatestNPeriods", [
     { productId, coordinate, latestN: months },
@@ -115,6 +165,10 @@ async function fetchVancouverNHPI({ months = 180 } = {}) {
     .map((dp) => ({ date: (dp.refPer || "").slice(0, 10), value: Number(dp.value) }))
     .filter((p) => p.date && Number.isFinite(p.value));
 
+  if (!points.length) {
+    throw new Error("NHPI returned 0 points (coordinate may still be invalid)");
+  }
+
   return {
     productId,
     coordinate,
@@ -124,8 +178,7 @@ async function fetchVancouverNHPI({ months = 180 } = {}) {
   };
 }
 
-/** -------- Demo listings (still synthetic) -------- **/
-
+/** -------------------- Demo listings + outlier scoring -------------------- **/
 function rand(seed) {
   let t = seed + 0x6d2b79f5;
   return () => {
@@ -145,8 +198,16 @@ function zScores(values) {
 }
 
 const NEIGHBORHOODS = [
-  "Kitsilano","Mount Pleasant","Commercial Drive","Downtown","West End",
-  "Fairview","Kerrisdale","Marpole","Renfrew-Collingwood","Hastings-Sunrise",
+  "Kitsilano",
+  "Mount Pleasant",
+  "Commercial Drive",
+  "Downtown",
+  "West End",
+  "Fairview",
+  "Kerrisdale",
+  "Marpole",
+  "Renfrew-Collingwood",
+  "Hastings-Sunrise",
 ];
 
 function generateListings(seed = Date.now()) {
@@ -160,28 +221,31 @@ function generateListings(seed = Date.now()) {
     const neighborhood = NEIGHBORHOODS[Math.floor(r() * NEIGHBORHOODS.length)];
 
     const ppsfBase =
-      (neighborhood === "Downtown" || neighborhood === "West End") ? 1200 :
-      (neighborhood === "Kitsilano" || neighborhood === "Fairview") ? 1150 :
-      (neighborhood === "Kerrisdale") ? 1100 : 950;
+      neighborhood === "Downtown" || neighborhood === "West End"
+        ? 1200
+        : neighborhood === "Kitsilano" || neighborhood === "Fairview"
+          ? 1150
+          : neighborhood === "Kerrisdale"
+            ? 1100
+            : 950;
 
     let ppsf = ppsfBase * (0.85 + r() * 0.35);
-    if (r() < 0.06) ppsf *= 0.78; // inject “good deal” outliers
+    if (r() < 0.06) ppsf *= 0.78; // inject a few “good deals”
     const price = Math.round((ppsf * sqft) / 1000) * 1000;
 
-    // NOTE: url is null in demo data. Replace later with real posting URLs.
     listings.push({
       id: `van-${seed}-${i}`,
       neighborhood,
       beds,
-      baths: beds === 1 ? 1 : (r() < 0.55 ? 1 : 2),
+      baths: beds === 1 ? 1 : r() < 0.55 ? 1 : 2,
       sqft,
       price,
       dom: Math.floor(r() * 45),
-      url: null,
+      url: null, // <- replace with real posting URL later
     });
   }
 
-  // z-score outliers per bed bucket on price/sqft
+  // outliers per bed bucket using price/sqft z-score
   const buckets = new Map();
   for (const l of listings) {
     const k = String(l.beds);
@@ -202,19 +266,26 @@ function generateListings(seed = Date.now()) {
   return listings.sort((a, b) => (b.dealScore ?? 0) - (a.dealScore ?? 0));
 }
 
-/** -------- main -------- **/
-
+/** -------------------- Main -------------------- **/
 async function main() {
   console.log("OUT_PATH =", OUT_PATH);
 
   const now = new Date().toISOString();
 
-  const [prime, mort5y, overnight, nhpiVancouver] = await Promise.all([
+  // Fetch rates (hard fail if these fail)
+  const [prime, mort5y, overnight] = await Promise.all([
     fetchValetSeries(SERIES.prime, { recent: 260 }),
     fetchValetSeries(SERIES.mort5y, { recent: 260 }),
     fetchValetSeries(SERIES.overnight, { recent: 520 }),
-    fetchVancouverNHPI({ months: 180 }),
   ]);
+
+  // Fetch NHPI (best-effort; don't fail the whole run)
+  let nhpiVancouver = null;
+  try {
+    nhpiVancouver = await fetchVancouverNHPI({ months: 180 });
+  } catch (e) {
+    console.log("NHPI fetch failed (continuing):", e?.message || e);
+  }
 
   const out = {
     generatedAt: now,
@@ -224,8 +295,8 @@ async function main() {
     listings: generateListings(),
     notes: {
       ratesSource: "Bank of Canada Valet API",
-      homePriceSource: "StatCan WDS (NHPI table 18-10-0205-01)",
-      listingsSource: "Synthetic demo listings (replace later with real feed + urls)",
+      homePriceSource: "StatCan WDS (NHPI table 18-10-0205-01) — best effort",
+      listingsSource: "Synthetic demo listings (replace with real feed + urls)",
     },
   };
 
@@ -233,8 +304,8 @@ async function main() {
 
   const stat = fs.statSync(OUT_PATH);
   console.log(`Wrote latest.json (${stat.size} bytes) at ${now}`);
-  console.log(`Prime latest:`, out.rates.prime.latest);
-  console.log(`NHPI latest:`, out.homePrice.nhpiVancouver.latest);
+  console.log("Prime latest:", out.rates.prime.latest);
+  console.log("NHPI latest:", out.homePrice.nhpiVancouver?.latest ?? null);
 }
 
 main().catch((e) => {
