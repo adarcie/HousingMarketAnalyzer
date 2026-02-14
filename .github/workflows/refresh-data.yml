@@ -22,7 +22,16 @@ jobs:
           node-version: 20
 
       - name: Update data
-        run: node scripts/update_data.mjs
+        run: |
+          node -v
+          node scripts/update_data.mjs
+          echo "---- ls docs ----"
+          ls -la docs || true
+          echo "---- ls docs/data ----"
+          ls -la docs/data || true
+          echo "---- latest.json (first 60 lines) ----"
+          sed -n '1,60p' docs/data/latest.json || true
+
 
       - name: Commit & push if changed
         run: |
