@@ -66,10 +66,25 @@ function applyFiltersAndRenderTable(data) {
 (async function main() {
   try {
     const data = await loadData();
-    document.getElementById("meta").innerHTML =
-      `Data refreshed: <b>${new Date(data.generatedAt).toLocaleString()}</b>`;
+
+    const meta = document.getElementById("meta");
+    const ageMinutes = (Date.now() - new Date(data.generatedAt).getTime()) / 60000;
+
+    meta.innerHTML = `Data refreshed: <b>${new Date(data.generatedAt).toLocaleString()}</b>` +
+      (ageMinutes > 24 * 60 ? ` <span class="badge" style="margin-left:8px">stale data</span>` : "");
 
     renderRates(data);
+
+    if (!data.listings || data.listings.length === 0) {
+      document.getElementById("count").textContent = "0";
+      document.getElementById("rows").innerHTML =
+        `<tr><td colspan="8" style="opacity:.75;padding:16px 8px">
+           No listings loaded. This usually means the GitHub Action did not update <code>docs/data/latest.json</code>.
+           Go to <b>Actions → Refresh data</b> and run it, and ensure workflow permissions are <b>read/write</b>.
+         </td></tr>`;
+      return;
+    }
+
     applyFiltersAndRenderTable(data);
 
     document.getElementById("minScore").addEventListener("input", () => applyFiltersAndRenderTable(data));
@@ -78,3 +93,4 @@ function applyFiltersAndRenderTable(data) {
     document.getElementById("meta").textContent = `Error: ${e.message}`;
   }
 })();
+
