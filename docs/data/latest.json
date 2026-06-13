@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T18:16:57.651Z",
+  "generatedAt": "2026-06-13T17:40:51.458Z",
   "locale": {
     "name": "Vancouver, BC, Canada",
     "currency": "CAD"
@@ -4194,1517 +4194,787 @@
     }
   },
   "homePrice": {
-    "nhpiVancouver": {
-      "productId": 18100205,
-      "coordinate": "39.1.0.0.0.0.0.0.0.0",
-      "points": [
-        {
-          "date": "2011-05-01",
-          "value": 96.7
-        },
-        {
-          "date": "2011-06-01",
-          "value": 96.6
-        },
-        {
-          "date": "2011-07-01",
-          "value": 96.6
-        },
-        {
-          "date": "2011-08-01",
-          "value": 96.3
-        },
-        {
-          "date": "2011-09-01",
-          "value": 96.3
-        },
-        {
-          "date": "2011-10-01",
-          "value": 96.2
-        },
-        {
-          "date": "2011-11-01",
-          "value": 95.9
-        },
-        {
-          "date": "2011-12-01",
-          "value": 95.7
-        },
-        {
-          "date": "2012-01-01",
-          "value": 96
-        },
-        {
-          "date": "2012-02-01",
-          "value": 95.8
-        },
-        {
-          "date": "2012-03-01",
-          "value": 95.7
-        },
-        {
-          "date": "2012-04-01",
-          "value": 95.7
-        },
-        {
-          "date": "2012-05-01",
-          "value": 95.8
-        },
-        {
-          "date": "2012-06-01",
-          "value": 95.8
-        },
-        {
-          "date": "2012-07-01",
-          "value": 95.9
-        },
-        {
-          "date": "2012-08-01",
-          "value": 95.9
-        },
-        {
-          "date": "2012-09-01",
-          "value": 95.8
-        },
-        {
-          "date": "2012-10-01",
-          "value": 95.9
-        },
-        {
-          "date": "2012-11-01",
-          "value": 95.5
-        },
-        {
-          "date": "2012-12-01",
-          "value": 95.2
-        },
-        {
-          "date": "2013-01-01",
-          "value": 95.2
-        },
-        {
-          "date": "2013-02-01",
-          "value": 95.2
-        },
-        {
-          "date": "2013-03-01",
-          "value": 95.1
-        },
-        {
-          "date": "2013-04-01",
-          "value": 95.1
-        },
-        {
-          "date": "2013-05-01",
-          "value": 94.9
-        },
-        {
-          "date": "2013-06-01",
-          "value": 94.7
-        },
-        {
-          "date": "2013-07-01",
-          "value": 95
-        },
-        {
-          "date": "2013-08-01",
-          "value": 94.6
-        },
-        {
-          "date": "2013-09-01",
-          "value": 94.6
-        },
-        {
-          "date": "2013-10-01",
-          "value": 94.4
-        },
-        {
-          "date": "2013-11-01",
-          "value": 94.3
-        },
-        {
-          "date": "2013-12-01",
-          "value": 94.1
-        },
-        {
-          "date": "2014-01-01",
-          "value": 94.1
-        },
-        {
-          "date": "2014-02-01",
-          "value": 94.1
-        },
-        {
-          "date": "2014-03-01",
-          "value": 94
-        },
-        {
-          "date": "2014-04-01",
-          "value": 93.6
-        },
-        {
-          "date": "2014-05-01",
-          "value": 93.5
-        },
-        {
-          "date": "2014-06-01",
-          "value": 93.3
-        },
-        {
-          "date": "2014-07-01",
-          "value": 93.2
-        },
-        {
-          "date": "2014-08-01",
-          "value": 93.5
-        },
-        {
-          "date": "2014-09-01",
-          "value": 93.5
-        },
-        {
-          "date": "2014-10-01",
-          "value": 93.8
-        },
-        {
-          "date": "2014-11-01",
-          "value": 93.7
-        },
-        {
-          "date": "2014-12-01",
-          "value": 93.6
-        },
-        {
-          "date": "2015-01-01",
-          "value": 93.5
-        },
-        {
-          "date": "2015-02-01",
-          "value": 93.5
-        },
-        {
-          "date": "2015-03-01",
-          "value": 93.5
-        },
-        {
-          "date": "2015-04-01",
-          "value": 94.1
-        },
-        {
-          "date": "2015-05-01",
-          "value": 94.1
-        },
-        {
-          "date": "2015-06-01",
-          "value": 94.3
-        },
-        {
-          "date": "2015-07-01",
-          "value": 94.7
-        },
-        {
-          "date": "2015-08-01",
-          "value": 94.7
-        },
-        {
-          "date": "2015-09-01",
-          "value": 95.1
-        },
-        {
-          "date": "2015-10-01",
-          "value": 95.4
-        },
-        {
-          "date": "2015-11-01",
-          "value": 95.8
-        },
-        {
-          "date": "2015-12-01",
-          "value": 96
-        },
-        {
-          "date": "2016-01-01",
-          "value": 96.4
-        },
-        {
-          "date": "2016-02-01",
-          "value": 97.2
-        },
-        {
-          "date": "2016-03-01",
-          "value": 97.6
-        },
-        {
-          "date": "2016-04-01",
-          "value": 97.8
-        },
-        {
-          "date": "2016-05-01",
-          "value": 98.9
-        },
-        {
-          "date": "2016-06-01",
-          "value": 99.3
-        },
-        {
-          "date": "2016-07-01",
-          "value": 99.8
-        },
-        {
-          "date": "2016-08-01",
-          "value": 99.8
-        },
-        {
-          "date": "2016-09-01",
-          "value": 100.1
-        },
-        {
-          "date": "2016-10-01",
-          "value": 100.3
-        },
-        {
-          "date": "2016-11-01",
-          "value": 100
-        },
-        {
-          "date": "2016-12-01",
-          "value": 100
-        },
-        {
-          "date": "2017-01-01",
-          "value": 99.9
-        },
-        {
-          "date": "2017-02-01",
-          "value": 99.8
-        },
-        {
-          "date": "2017-03-01",
-          "value": 100.5
-        },
-        {
-          "date": "2017-04-01",
-          "value": 101.7
-        },
-        {
-          "date": "2017-05-01",
-          "value": 103.9
-        },
-        {
-          "date": "2017-06-01",
-          "value": 105.5
-        },
-        {
-          "date": "2017-07-01",
-          "value": 107.6
-        },
-        {
-          "date": "2017-08-01",
-          "value": 107.6
-        },
-        {
-          "date": "2017-09-01",
-          "value": 108.4
-        },
-        {
-          "date": "2017-10-01",
-          "value": 108.7
-        },
-        {
-          "date": "2017-11-01",
-          "value": 108.7
-        },
-        {
-          "date": "2017-12-01",
-          "value": 108.9
-        },
-        {
-          "date": "2018-01-01",
-          "value": 108.9
-        },
-        {
-          "date": "2018-02-01",
-          "value": 108.9
-        },
-        {
-          "date": "2018-03-01",
-          "value": 108.9
-        },
-        {
-          "date": "2018-04-01",
-          "value": 108.9
-        },
-        {
-          "date": "2018-05-01",
-          "value": 108.9
-        },
-        {
-          "date": "2018-06-01",
-          "value": 109.1
-        },
-        {
-          "date": "2018-07-01",
-          "value": 108.9
-        },
-        {
-          "date": "2018-08-01",
-          "value": 108.7
-        },
-        {
-          "date": "2018-09-01",
-          "value": 109.1
-        },
-        {
-          "date": "2018-10-01",
-          "value": 109.1
-        },
-        {
-          "date": "2018-11-01",
-          "value": 108.8
-        },
-        {
-          "date": "2018-12-01",
-          "value": 108.7
-        },
-        {
-          "date": "2019-01-01",
-          "value": 108.6
-        },
-        {
-          "date": "2019-02-01",
-          "value": 108.3
-        },
-        {
-          "date": "2019-03-01",
-          "value": 108.4
-        },
-        {
-          "date": "2019-04-01",
-          "value": 108.2
-        },
-        {
-          "date": "2019-05-01",
-          "value": 107.9
-        },
-        {
-          "date": "2019-06-01",
-          "value": 107.8
-        },
-        {
-          "date": "2019-07-01",
-          "value": 107.3
-        },
-        {
-          "date": "2019-08-01",
-          "value": 107.3
-        },
-        {
-          "date": "2019-09-01",
-          "value": 106.7
-        },
-        {
-          "date": "2019-10-01",
-          "value": 106.4
-        },
-        {
-          "date": "2019-11-01",
-          "value": 105.8
-        },
-        {
-          "date": "2019-12-01",
-          "value": 106.2
-        },
-        {
-          "date": "2020-01-01",
-          "value": 106
-        },
-        {
-          "date": "2020-02-01",
-          "value": 106.4
-        },
-        {
-          "date": "2020-03-01",
-          "value": 106.9
-        },
-        {
-          "date": "2020-04-01",
-          "value": 106.9
-        },
-        {
-          "date": "2020-05-01",
-          "value": 106.9
-        },
-        {
-          "date": "2020-06-01",
-          "value": 107
-        },
-        {
-          "date": "2020-07-01",
-          "value": 107.8
-        },
-        {
-          "date": "2020-08-01",
-          "value": 108.9
-        },
-        {
-          "date": "2020-09-01",
-          "value": 111.1
-        },
-        {
-          "date": "2020-10-01",
-          "value": 112.5
-        },
-        {
-          "date": "2020-11-01",
-          "value": 112.8
-        },
-        {
-          "date": "2020-12-01",
-          "value": 112.8
-        },
-        {
-          "date": "2021-01-01",
-          "value": 113.1
-        },
-        {
-          "date": "2021-02-01",
-          "value": 117.6
-        },
-        {
-          "date": "2021-03-01",
-          "value": 118.2
-        },
-        {
-          "date": "2021-04-01",
-          "value": 120
-        },
-        {
-          "date": "2021-05-01",
-          "value": 120.9
-        },
-        {
-          "date": "2021-06-01",
-          "value": 120.5
-        },
-        {
-          "date": "2021-07-01",
-          "value": 120.9
-        },
-        {
-          "date": "2021-08-01",
-          "value": 121.5
-        },
-        {
-          "date": "2021-09-01",
-          "value": 122.6
-        },
-        {
-          "date": "2021-10-01",
-          "value": 123.8
-        },
-        {
-          "date": "2021-11-01",
-          "value": 124.7
-        },
-        {
-          "date": "2021-12-01",
-          "value": 124.8
-        },
-        {
-          "date": "2022-01-01",
-          "value": 127.1
-        },
-        {
-          "date": "2022-02-01",
-          "value": 128
-        },
-        {
-          "date": "2022-03-01",
-          "value": 128.3
-        },
-        {
-          "date": "2022-04-01",
-          "value": 128.6
-        },
-        {
-          "date": "2022-05-01",
-          "value": 128.6
-        },
-        {
-          "date": "2022-06-01",
-          "value": 128.7
-        },
-        {
-          "date": "2022-07-01",
-          "value": 129.4
-        },
-        {
-          "date": "2022-08-01",
-          "value": 129.4
-        },
-        {
-          "date": "2022-09-01",
-          "value": 129.4
-        },
-        {
-          "date": "2022-10-01",
-          "value": 128.4
-        },
-        {
-          "date": "2022-11-01",
-          "value": 128.2
-        },
-        {
-          "date": "2022-12-01",
-          "value": 128.2
-        },
-        {
-          "date": "2023-01-01",
-          "value": 127.7
-        },
-        {
-          "date": "2023-02-01",
-          "value": 127.6
-        },
-        {
-          "date": "2023-03-01",
-          "value": 127.6
-        },
-        {
-          "date": "2023-04-01",
-          "value": 127.6
-        },
-        {
-          "date": "2023-05-01",
-          "value": 127.8
-        },
-        {
-          "date": "2023-06-01",
-          "value": 128.5
-        },
-        {
-          "date": "2023-07-01",
-          "value": 128.4
-        },
-        {
-          "date": "2023-08-01",
-          "value": 129.1
-        },
-        {
-          "date": "2023-09-01",
-          "value": 128.6
-        },
-        {
-          "date": "2023-10-01",
-          "value": 128.6
-        },
-        {
-          "date": "2023-11-01",
-          "value": 128.6
-        },
-        {
-          "date": "2023-12-01",
-          "value": 128.7
-        },
-        {
-          "date": "2024-01-01",
-          "value": 128.3
-        },
-        {
-          "date": "2024-02-01",
-          "value": 128.5
-        },
-        {
-          "date": "2024-03-01",
-          "value": 128.5
-        },
-        {
-          "date": "2024-04-01",
-          "value": 129.2
-        },
-        {
-          "date": "2024-05-01",
-          "value": 129.2
-        },
-        {
-          "date": "2024-06-01",
-          "value": 128.4
-        },
-        {
-          "date": "2024-07-01",
-          "value": 128.8
-        },
-        {
-          "date": "2024-08-01",
-          "value": 128.9
-        },
-        {
-          "date": "2024-09-01",
-          "value": 128.6
-        },
-        {
-          "date": "2024-10-01",
-          "value": 127.8
-        },
-        {
-          "date": "2024-11-01",
-          "value": 127.8
-        },
-        {
-          "date": "2024-12-01",
-          "value": 127.8
-        },
-        {
-          "date": "2025-01-01",
-          "value": 128
-        },
-        {
-          "date": "2025-02-01",
-          "value": 127.9
-        },
-        {
-          "date": "2025-03-01",
-          "value": 127.8
-        },
-        {
-          "date": "2025-04-01",
-          "value": 127.6
-        },
-        {
-          "date": "2025-05-01",
-          "value": 127.1
-        },
-        {
-          "date": "2025-06-01",
-          "value": 126.8
-        },
-        {
-          "date": "2025-07-01",
-          "value": 126.8
-        },
-        {
-          "date": "2025-08-01",
-          "value": 125.8
-        },
-        {
-          "date": "2025-09-01",
-          "value": 126.1
-        },
-        {
-          "date": "2025-10-01",
-          "value": 125.9
-        },
-        {
-          "date": "2025-11-01",
-          "value": 125.7
-        },
-        {
-          "date": "2025-12-01",
-          "value": 125.4
-        },
-        {
-          "date": "2026-01-01",
-          "value": 125
-        },
-        {
-          "date": "2026-02-01",
-          "value": 125
-        },
-        {
-          "date": "2026-03-01",
-          "value": 124.6
-        },
-        {
-          "date": "2026-04-01",
-          "value": 124.5
-        }
-      ],
-      "latest": {
-        "date": "2026-04-01",
-        "value": 124.5
-      },
-      "note": "New Housing Price Index (Dec 2016=100), Vancouver (CMA), via StatCan WDS (table 18-10-0205-01)."
-    }
+    "nhpiVancouver": null
   },
   "listings": [
     {
-      "id": "van-1781288218970-11",
-      "neighborhood": "Marpole",
+      "id": "van-1781372462005-25",
+      "neighborhood": "Commercial Drive",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 1089,
+      "price": 911000,
+      "dom": 7,
+      "url": null,
+      "pricePerSqft": 836.5,
+      "z": -1.85,
+      "dealScore": 37
+    },
+    {
+      "id": "van-1781372462005-41",
+      "neighborhood": "Hastings-Sunrise",
       "beds": 1,
       "baths": 1,
-      "sqft": 729,
-      "price": 590000,
-      "dom": 11,
+      "sqft": 685,
+      "price": 530000,
+      "dom": 32,
       "url": null,
-      "pricePerSqft": 809.3,
-      "z": -1.78,
+      "pricePerSqft": 773.7,
+      "z": -1.79,
       "dealScore": 36
     },
     {
-      "id": "van-1781288218970-39",
+      "id": "van-1781372462005-4",
+      "neighborhood": "Commercial Drive",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 978,
+      "price": 861000,
+      "dom": 37,
+      "url": null,
+      "pricePerSqft": 880.4,
+      "z": -1.53,
+      "dealScore": 31
+    },
+    {
+      "id": "van-1781372462005-21",
       "neighborhood": "Hastings-Sunrise",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 665,
-      "price": 544000,
-      "dom": 14,
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1102,
+      "price": 976000,
+      "dom": 41,
       "url": null,
-      "pricePerSqft": 818,
-      "z": -1.71,
-      "dealScore": 34
-    },
-    {
-      "id": "van-1781288218970-44",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 542,
-      "price": 447000,
-      "dom": 15,
-      "url": null,
-      "pricePerSqft": 824.7,
-      "z": -1.66,
-      "dealScore": 33
-    },
-    {
-      "id": "van-1781288218970-10",
-      "neighborhood": "Fairview",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 511,
-      "price": 432000,
-      "dom": 15,
-      "url": null,
-      "pricePerSqft": 845.4,
-      "z": -1.51,
+      "pricePerSqft": 885.7,
+      "z": -1.49,
       "dealScore": 30
     },
     {
-      "id": "van-1781288218970-24",
-      "neighborhood": "Commercial Drive",
-      "beds": 2,
+      "id": "van-1781372462005-40",
+      "neighborhood": "Mount Pleasant",
+      "beds": 1,
       "baths": 1,
-      "sqft": 933,
-      "price": 727000,
-      "dom": 14,
+      "sqft": 538,
+      "price": 446000,
+      "dom": 23,
       "url": null,
-      "pricePerSqft": 779.2,
-      "z": -1.45,
+      "pricePerSqft": 829,
+      "z": -1.46,
       "dealScore": 29
     },
     {
-      "id": "van-1781288218970-1",
+      "id": "van-1781372462005-59",
+      "neighborhood": "Renfrew-Collingwood",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 445,
+      "price": 377000,
+      "dom": 27,
+      "url": null,
+      "pricePerSqft": 847.2,
+      "z": -1.35,
+      "dealScore": 27
+    },
+    {
+      "id": "van-1781372462005-52",
+      "neighborhood": "Marpole",
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1234,
+      "price": 1011000,
+      "dom": 38,
+      "url": null,
+      "pricePerSqft": 819.3,
+      "z": -1.31,
+      "dealScore": 26
+    },
+    {
+      "id": "van-1781372462005-14",
       "neighborhood": "Mount Pleasant",
       "beds": 1,
       "baths": 1,
-      "sqft": 769,
-      "price": 672000,
-      "dom": 31,
-      "url": null,
-      "pricePerSqft": 873.9,
-      "z": -1.29,
-      "dealScore": 26
-    },
-    {
-      "id": "van-1781288218970-59",
-      "neighborhood": "Commercial Drive",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 568,
-      "price": 496000,
-      "dom": 34,
-      "url": null,
-      "pricePerSqft": 873.2,
-      "z": -1.3,
-      "dealScore": 26
-    },
-    {
-      "id": "van-1781288218970-27",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 907,
-      "price": 736000,
-      "dom": 34,
-      "url": null,
-      "pricePerSqft": 811.5,
-      "z": -1.27,
-      "dealScore": 25
-    },
-    {
-      "id": "van-1781288218970-23",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 533,
-      "price": 471000,
-      "dom": 38,
+      "sqft": 576,
+      "price": 509000,
+      "dom": 17,
       "url": null,
       "pricePerSqft": 883.7,
-      "z": -1.22,
-      "dealScore": 24
-    },
-    {
-      "id": "van-1781288218970-28",
-      "neighborhood": "Fairview",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 723,
-      "price": 602000,
-      "dom": 18,
-      "url": null,
-      "pricePerSqft": 832.6,
-      "z": -1.15,
+      "z": -1.13,
       "dealScore": 23
     },
     {
-      "id": "van-1781288218970-7",
+      "id": "van-1781372462005-9",
       "neighborhood": "Hastings-Sunrise",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 965,
-      "price": 838000,
-      "dom": 29,
-      "url": null,
-      "pricePerSqft": 868.4,
-      "z": -0.96,
-      "dealScore": 19
-    },
-    {
-      "id": "van-1781288218970-20",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 2,
+      "beds": 1,
       "baths": 1,
-      "sqft": 983,
-      "price": 851000,
-      "dom": 43,
+      "sqft": 617,
+      "price": 547000,
+      "dom": 10,
       "url": null,
-      "pricePerSqft": 865.7,
-      "z": -0.97,
-      "dealScore": 19
+      "pricePerSqft": 886.5,
+      "z": -1.11,
+      "dealScore": 22
     },
     {
-      "id": "van-1781288218970-26",
-      "neighborhood": "Downtown",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 1037,
-      "price": 915000,
-      "dom": 2,
+      "id": "van-1781372462005-47",
+      "neighborhood": "Commercial Drive",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 727,
+      "price": 645000,
+      "dom": 24,
       "url": null,
-      "pricePerSqft": 882.4,
-      "z": -0.88,
-      "dealScore": 18
+      "pricePerSqft": 887.2,
+      "z": -1.11,
+      "dealScore": 22
     },
     {
-      "id": "van-1781288218970-22",
+      "id": "van-1781372462005-3",
       "neighborhood": "Mount Pleasant",
       "beds": 2,
       "baths": 2,
-      "sqft": 936,
-      "price": 836000,
-      "dom": 36,
+      "sqft": 722,
+      "price": 683000,
+      "dom": 22,
       "url": null,
-      "pricePerSqft": 893.2,
+      "pricePerSqft": 946,
+      "z": -1.06,
+      "dealScore": 21
+    },
+    {
+      "id": "van-1781372462005-16",
+      "neighborhood": "Hastings-Sunrise",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 527,
+      "price": 476000,
+      "dom": 2,
+      "url": null,
+      "pricePerSqft": 903.2,
+      "z": -1.01,
+      "dealScore": 20
+    },
+    {
+      "id": "van-1781372462005-0",
+      "neighborhood": "Commercial Drive",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 661,
+      "price": 618000,
+      "dom": 20,
+      "url": null,
+      "pricePerSqft": 934.9,
       "z": -0.82,
       "dealScore": 16
     },
     {
-      "id": "van-1781288218970-12",
-      "neighborhood": "Hastings-Sunrise",
+      "id": "van-1781372462005-24",
+      "neighborhood": "Renfrew-Collingwood",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1022,
+      "price": 1005000,
+      "dom": 31,
+      "url": null,
+      "pricePerSqft": 983.4,
+      "z": -0.79,
+      "dealScore": 16
+    },
+    {
+      "id": "van-1781372462005-44",
+      "neighborhood": "Mount Pleasant",
       "beds": 2,
       "baths": 1,
-      "sqft": 917,
-      "price": 827000,
-      "dom": 25,
+      "sqft": 783,
+      "price": 782000,
+      "dom": 5,
       "url": null,
-      "pricePerSqft": 901.9,
-      "z": -0.77,
-      "dealScore": 15
-    },
-    {
-      "id": "van-1781288218970-21",
-      "neighborhood": "Kerrisdale",
-      "beds": 3,
-      "baths": 2,
-      "sqft": 1646,
-      "price": 1243000,
-      "dom": 30,
-      "url": null,
-      "pricePerSqft": 755.2,
-      "z": -0.71,
-      "dealScore": 14
-    },
-    {
-      "id": "van-1781288218970-57",
-      "neighborhood": "Commercial Drive",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 609,
-      "price": 582000,
-      "dom": 27,
-      "url": null,
-      "pricePerSqft": 955.7,
+      "pricePerSqft": 998.7,
       "z": -0.68,
       "dealScore": 14
     },
     {
-      "id": "van-1781288218970-37",
-      "neighborhood": "Commercial Drive",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 660,
-      "price": 637000,
-      "dom": 32,
+      "id": "van-1781372462005-45",
+      "neighborhood": "Hastings-Sunrise",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1107,
+      "price": 983000,
+      "dom": 24,
       "url": null,
-      "pricePerSqft": 965.2,
-      "z": -0.61,
+      "pricePerSqft": 888,
+      "z": -0.64,
+      "dealScore": 13
+    },
+    {
+      "id": "van-1781372462005-22",
+      "neighborhood": "Mount Pleasant",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 957,
+      "price": 966000,
+      "dom": 29,
+      "url": null,
+      "pricePerSqft": 1009.4,
+      "z": -0.6,
       "dealScore": 12
     },
     {
-      "id": "van-1781288218970-45",
-      "neighborhood": "Commercial Drive",
+      "id": "van-1781372462005-56",
+      "neighborhood": "Renfrew-Collingwood",
       "beds": 1,
       "baths": 1,
-      "sqft": 658,
-      "price": 640000,
-      "dom": 14,
+      "sqft": 564,
+      "price": 548000,
+      "dom": 44,
       "url": null,
-      "pricePerSqft": 972.6,
-      "z": -0.55,
-      "dealScore": 11
+      "pricePerSqft": 971.6,
+      "z": -0.6,
+      "dealScore": 12
     },
     {
-      "id": "van-1781288218970-6",
+      "id": "van-1781372462005-19",
       "neighborhood": "Renfrew-Collingwood",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 712,
-      "price": 682000,
-      "dom": 14,
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1056,
+      "price": 959000,
+      "dom": 24,
       "url": null,
-      "pricePerSqft": 957.9,
+      "pricePerSqft": 908.1,
+      "z": -0.44,
+      "dealScore": 9
+    },
+    {
+      "id": "van-1781372462005-34",
+      "neighborhood": "Marpole",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 723,
+      "price": 720000,
+      "dom": 22,
+      "url": null,
+      "pricePerSqft": 995.9,
       "z": -0.46,
       "dealScore": 9
     },
     {
-      "id": "van-1781288218970-32",
-      "neighborhood": "Hastings-Sunrise",
+      "id": "van-1781372462005-49",
+      "neighborhood": "Marpole",
       "beds": 1,
       "baths": 1,
-      "sqft": 672,
-      "price": 670000,
-      "dom": 25,
+      "sqft": 540,
+      "price": 539000,
+      "dom": 34,
       "url": null,
-      "pricePerSqft": 997,
-      "z": -0.37,
-      "dealScore": 7
+      "pricePerSqft": 998.1,
+      "z": -0.44,
+      "dealScore": 9
     },
     {
-      "id": "van-1781288218970-50",
+      "id": "van-1781372462005-58",
+      "neighborhood": "Downtown",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 691,
+      "price": 710000,
+      "dom": 17,
+      "url": null,
+      "pricePerSqft": 1027.5,
+      "z": -0.47,
+      "dealScore": 9
+    },
+    {
+      "id": "van-1781372462005-27",
       "neighborhood": "Renfrew-Collingwood",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 598,
-      "price": 596000,
-      "dom": 5,
-      "url": null,
-      "pricePerSqft": 996.7,
-      "z": -0.37,
-      "dealScore": 7
-    },
-    {
-      "id": "van-1781288218970-15",
-      "neighborhood": "Fairview",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 735,
-      "price": 727000,
-      "dom": 41,
-      "url": null,
-      "pricePerSqft": 989.1,
-      "z": -0.29,
-      "dealScore": 6
-    },
-    {
-      "id": "van-1781288218970-17",
-      "neighborhood": "Commercial Drive",
       "beds": 2,
       "baths": 1,
-      "sqft": 1104,
-      "price": 1100000,
+      "sqft": 901,
+      "price": 935000,
       "dom": 42,
       "url": null,
-      "pricePerSqft": 996.4,
+      "pricePerSqft": 1037.7,
+      "z": -0.4,
+      "dealScore": 8
+    },
+    {
+      "id": "van-1781372462005-12",
+      "neighborhood": "Mount Pleasant",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 591,
+      "price": 609000,
+      "dom": 34,
+      "url": null,
+      "pricePerSqft": 1030.5,
       "z": -0.25,
       "dealScore": 5
     },
     {
-      "id": "van-1781288218970-25",
-      "neighborhood": "Hastings-Sunrise",
+      "id": "van-1781372462005-18",
+      "neighborhood": "Kitsilano",
       "beds": 1,
       "baths": 1,
-      "sqft": 524,
-      "price": 532000,
-      "dom": 10,
+      "sqft": 576,
+      "price": 591000,
+      "dom": 36,
       "url": null,
-      "pricePerSqft": 1015.3,
-      "z": -0.23,
+      "pricePerSqft": 1026,
+      "z": -0.27,
       "dealScore": 5
     },
     {
-      "id": "van-1781288218970-47",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 1,
+      "id": "van-1781372462005-43",
+      "neighborhood": "West End",
+      "beds": 2,
       "baths": 1,
-      "sqft": 568,
-      "price": 577000,
-      "dom": 7,
+      "sqft": 907,
+      "price": 957000,
+      "dom": 30,
       "url": null,
-      "pricePerSqft": 1015.8,
-      "z": -0.22,
+      "pricePerSqft": 1055.1,
+      "z": -0.27,
+      "dealScore": 5
+    },
+    {
+      "id": "van-1781372462005-11",
+      "neighborhood": "Commercial Drive",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 854,
+      "price": 911000,
+      "dom": 39,
+      "url": null,
+      "pricePerSqft": 1066.7,
+      "z": -0.19,
       "dealScore": 4
     },
     {
-      "id": "van-1781288218970-40",
-      "neighborhood": "Hastings-Sunrise",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 709,
-      "price": 721000,
-      "dom": 20,
-      "url": null,
-      "pricePerSqft": 1016.9,
-      "z": -0.14,
-      "dealScore": 3
-    },
-    {
-      "id": "van-1781288218970-55",
-      "neighborhood": "Hastings-Sunrise",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 596,
-      "price": 611000,
-      "dom": 37,
-      "url": null,
-      "pricePerSqft": 1025.2,
-      "z": -0.15,
-      "dealScore": 3
-    },
-    {
-      "id": "van-1781288218970-0",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 496,
-      "price": 517000,
-      "dom": 31,
-      "url": null,
-      "pricePerSqft": 1042.3,
-      "z": -0.03,
-      "dealScore": 1
-    },
-    {
-      "id": "van-1781288218970-2",
-      "neighborhood": "Mount Pleasant",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 445,
-      "price": 461000,
-      "dom": 33,
-      "url": null,
-      "pricePerSqft": 1036,
-      "z": -0.07,
-      "dealScore": 1
-    },
-    {
-      "id": "van-1781288218970-3",
+      "id": "van-1781372462005-38",
       "neighborhood": "Kitsilano",
       "beds": 1,
       "baths": 1,
-      "sqft": 649,
-      "price": 736000,
-      "dom": 29,
+      "sqft": 497,
+      "price": 518000,
+      "dom": 27,
       "url": null,
-      "pricePerSqft": 1134.1,
-      "z": 0.66,
-      "dealScore": 0
+      "pricePerSqft": 1042.3,
+      "z": -0.18,
+      "dealScore": 4
     },
     {
-      "id": "van-1781288218970-4",
-      "neighborhood": "Fairview",
-      "beds": 2,
+      "id": "van-1781372462005-17",
+      "neighborhood": "Kerrisdale",
+      "beds": 1,
       "baths": 1,
-      "sqft": 814,
-      "price": 1080000,
-      "dom": 17,
+      "sqft": 764,
+      "price": 802000,
+      "dom": 34,
       "url": null,
-      "pricePerSqft": 1326.8,
-      "z": 1.58,
-      "dealScore": 0
+      "pricePerSqft": 1049.7,
+      "z": -0.13,
+      "dealScore": 3
     },
     {
-      "id": "van-1781288218970-5",
-      "neighborhood": "Fairview",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 1038,
-      "price": 1209000,
-      "dom": 18,
-      "url": null,
-      "pricePerSqft": 1164.7,
-      "z": 0.68,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-8",
+      "id": "van-1781372462005-1",
       "neighborhood": "Downtown",
       "beds": 1,
       "baths": 1,
-      "sqft": 682,
-      "price": 808000,
+      "sqft": 622,
+      "price": 746000,
       "dom": 13,
       "url": null,
-      "pricePerSqft": 1184.8,
-      "z": 1.04,
+      "pricePerSqft": 1199.4,
+      "z": 0.77,
       "dealScore": 0
     },
     {
-      "id": "van-1781288218970-9",
-      "neighborhood": "West End",
+      "id": "van-1781372462005-2",
+      "neighborhood": "Kitsilano",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1095,
+      "price": 1336000,
+      "dom": 21,
+      "url": null,
+      "pricePerSqft": 1220.1,
+      "z": 0.92,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-5",
+      "neighborhood": "Kitsilano",
       "beds": 1,
       "baths": 1,
-      "sqft": 446,
-      "price": 543000,
-      "dom": 8,
+      "sqft": 519,
+      "price": 629000,
+      "dom": 30,
       "url": null,
-      "pricePerSqft": 1217.5,
-      "z": 1.29,
+      "pricePerSqft": 1211.9,
+      "z": 0.85,
       "dealScore": 0
     },
     {
-      "id": "van-1781288218970-13",
-      "neighborhood": "Mount Pleasant",
+      "id": "van-1781372462005-6",
+      "neighborhood": "Fairview",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1007,
+      "price": 1232000,
+      "dom": 23,
+      "url": null,
+      "pricePerSqft": 1223.4,
+      "z": 0.94,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-7",
+      "neighborhood": "Fairview",
       "beds": 3,
       "baths": 2,
-      "sqft": 1356,
-      "price": 1357000,
-      "dom": 42,
-      "url": null,
-      "pricePerSqft": 1000.7,
-      "z": 0.71,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-14",
-      "neighborhood": "Mount Pleasant",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 618,
-      "price": 647000,
-      "dom": 34,
-      "url": null,
-      "pricePerSqft": 1046.9,
-      "z": 0.01,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-16",
-      "neighborhood": "Mount Pleasant",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 814,
-      "price": 917000,
-      "dom": 40,
-      "url": null,
-      "pricePerSqft": 1126.5,
-      "z": 0.47,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-18",
-      "neighborhood": "West End",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 903,
-      "price": 1043000,
-      "dom": 38,
-      "url": null,
-      "pricePerSqft": 1155,
-      "z": 0.63,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-19",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 449,
-      "price": 497000,
-      "dom": 13,
-      "url": null,
-      "pricePerSqft": 1106.9,
-      "z": 0.46,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-29",
-      "neighborhood": "Kitsilano",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 1138,
-      "price": 1203000,
-      "dom": 5,
-      "url": null,
-      "pricePerSqft": 1057.1,
-      "z": 0.09,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-30",
-      "neighborhood": "West End",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 713,
-      "price": 993000,
-      "dom": 4,
-      "url": null,
-      "pricePerSqft": 1392.7,
-      "z": 1.94,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-31",
-      "neighborhood": "Kerrisdale",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 956,
-      "price": 1205000,
-      "dom": 43,
-      "url": null,
-      "pricePerSqft": 1260.5,
-      "z": 1.21,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-33",
-      "neighborhood": "Marpole",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 465,
-      "price": 511000,
-      "dom": 17,
-      "url": null,
-      "pricePerSqft": 1098.9,
-      "z": 0.4,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-34",
-      "neighborhood": "Renfrew-Collingwood",
-      "beds": 2,
-      "baths": 1,
-      "sqft": 1068,
-      "price": 1114000,
-      "dom": 42,
-      "url": null,
-      "pricePerSqft": 1043.1,
-      "z": 0.01,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-35",
-      "neighborhood": "West End",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 810,
-      "price": 913000,
-      "dom": 30,
-      "url": null,
-      "pricePerSqft": 1127.2,
-      "z": 0.47,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-36",
-      "neighborhood": "West End",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 452,
-      "price": 487000,
-      "dom": 39,
-      "url": null,
-      "pricePerSqft": 1077.4,
-      "z": 0.24,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-38",
-      "neighborhood": "Fairview",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 506,
-      "price": 593000,
+      "sqft": 1041,
+      "price": 1045000,
       "dom": 12,
       "url": null,
-      "pricePerSqft": 1171.9,
-      "z": 0.95,
+      "pricePerSqft": 1003.8,
+      "z": 0.51,
       "dealScore": 0
     },
     {
-      "id": "van-1781288218970-41",
-      "neighborhood": "Marpole",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 667,
-      "price": 729000,
-      "dom": 24,
-      "url": null,
-      "pricePerSqft": 1093,
-      "z": 0.35,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-42",
-      "neighborhood": "Fairview",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 456,
-      "price": 587000,
-      "dom": 12,
-      "url": null,
-      "pricePerSqft": 1287.3,
-      "z": 1.81,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-43",
-      "neighborhood": "Fairview",
+      "id": "van-1781372462005-8",
+      "neighborhood": "Downtown",
       "beds": 2,
-      "baths": 2,
-      "sqft": 1042,
-      "price": 1433000,
-      "dom": 19,
-      "url": null,
-      "pricePerSqft": 1375.2,
-      "z": 1.84,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-46",
-      "neighborhood": "Hastings-Sunrise",
-      "beds": 2,
-      "baths": 2,
-      "sqft": 896,
-      "price": 1014000,
-      "dom": 35,
-      "url": null,
-      "pricePerSqft": 1131.7,
-      "z": 0.5,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-48",
-      "neighborhood": "Kitsilano",
-      "beds": 1,
       "baths": 1,
-      "sqft": 528,
-      "price": 681000,
-      "dom": 37,
-      "url": null,
-      "pricePerSqft": 1289.8,
-      "z": 1.83,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-49",
-      "neighborhood": "Kitsilano",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 474,
-      "price": 562000,
-      "dom": 0,
-      "url": null,
-      "pricePerSqft": 1185.7,
-      "z": 1.05,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-51",
-      "neighborhood": "Commercial Drive",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 728,
-      "price": 779000,
-      "dom": 24,
-      "url": null,
-      "pricePerSqft": 1070.1,
-      "z": 0.18,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-52",
-      "neighborhood": "Hastings-Sunrise",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 679,
-      "price": 743000,
+      "sqft": 1011,
+      "price": 1236000,
       "dom": 14,
       "url": null,
-      "pricePerSqft": 1094.3,
-      "z": 0.36,
+      "pricePerSqft": 1222.6,
+      "z": 0.93,
       "dealScore": 0
     },
     {
-      "id": "van-1781288218970-53",
-      "neighborhood": "Mount Pleasant",
-      "beds": 1,
-      "baths": 1,
-      "sqft": 596,
-      "price": 655000,
-      "dom": 30,
-      "url": null,
-      "pricePerSqft": 1099,
-      "z": 0.4,
-      "dealScore": 0
-    },
-    {
-      "id": "van-1781288218970-54",
+      "id": "van-1781372462005-10",
       "neighborhood": "Kerrisdale",
       "beds": 1,
       "baths": 1,
-      "sqft": 572,
-      "price": 633000,
-      "dom": 11,
+      "sqft": 677,
+      "price": 728000,
+      "dom": 35,
       "url": null,
-      "pricePerSqft": 1106.6,
-      "z": 0.46,
+      "pricePerSqft": 1075.3,
+      "z": 0.02,
       "dealScore": 0
     },
     {
-      "id": "van-1781288218970-56",
-      "neighborhood": "Commercial Drive",
+      "id": "van-1781372462005-13",
+      "neighborhood": "Kerrisdale",
       "beds": 1,
       "baths": 1,
-      "sqft": 569,
-      "price": 623000,
-      "dom": 2,
+      "sqft": 499,
+      "price": 641000,
+      "dom": 35,
       "url": null,
-      "pricePerSqft": 1094.9,
+      "pricePerSqft": 1284.6,
+      "z": 1.28,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-15",
+      "neighborhood": "Renfrew-Collingwood",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 854,
+      "price": 950000,
+      "dom": 41,
+      "url": null,
+      "pricePerSqft": 1112.4,
+      "z": 0.14,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-20",
+      "neighborhood": "West End",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 470,
+      "price": 656000,
+      "dom": 39,
+      "url": null,
+      "pricePerSqft": 1395.7,
+      "z": 1.95,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-23",
+      "neighborhood": "West End",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 636,
+      "price": 689000,
+      "dom": 10,
+      "url": null,
+      "pricePerSqft": 1083.3,
+      "z": 0.07,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-26",
+      "neighborhood": "Fairview",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 548,
+      "price": 706000,
+      "dom": 10,
+      "url": null,
+      "pricePerSqft": 1288.3,
+      "z": 1.31,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-28",
+      "neighborhood": "Fairview",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1582,
+      "price": 1566000,
+      "dom": 9,
+      "url": null,
+      "pricePerSqft": 989.9,
       "z": 0.37,
       "dealScore": 0
     },
     {
-      "id": "van-1781288218970-58",
-      "neighborhood": "Downtown",
+      "id": "van-1781372462005-29",
+      "neighborhood": "Kerrisdale",
       "beds": 1,
       "baths": 1,
-      "sqft": 645,
-      "price": 834000,
-      "dom": 39,
+      "sqft": 513,
+      "price": 672000,
+      "dom": 1,
       "url": null,
-      "pricePerSqft": 1293,
-      "z": 1.86,
+      "pricePerSqft": 1309.9,
+      "z": 1.44,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-30",
+      "neighborhood": "Fairview",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 841,
+      "price": 999000,
+      "dom": 1,
+      "url": null,
+      "pricePerSqft": 1187.9,
+      "z": 0.68,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-31",
+      "neighborhood": "Kitsilano",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 512,
+      "price": 701000,
+      "dom": 20,
+      "url": null,
+      "pricePerSqft": 1369.1,
+      "z": 1.79,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-32",
+      "neighborhood": "Commercial Drive",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 755,
+      "price": 832000,
+      "dom": 10,
+      "url": null,
+      "pricePerSqft": 1102,
+      "z": 0.18,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-33",
+      "neighborhood": "Hastings-Sunrise",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 943,
+      "price": 1060000,
+      "dom": 35,
+      "url": null,
+      "pricePerSqft": 1124.1,
+      "z": 0.22,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-35",
+      "neighborhood": "Commercial Drive",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 819,
+      "price": 916000,
+      "dom": 10,
+      "url": null,
+      "pricePerSqft": 1118.4,
+      "z": 0.18,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-36",
+      "neighborhood": "Kitsilano",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 654,
+      "price": 739000,
+      "dom": 25,
+      "url": null,
+      "pricePerSqft": 1130,
+      "z": 0.35,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-37",
+      "neighborhood": "West End",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 674,
+      "price": 831000,
+      "dom": 8,
+      "url": null,
+      "pricePerSqft": 1232.9,
+      "z": 0.97,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-39",
+      "neighborhood": "Kerrisdale",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 955,
+      "price": 1062000,
+      "dom": 32,
+      "url": null,
+      "pricePerSqft": 1112,
+      "z": 0.14,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-42",
+      "neighborhood": "West End",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 905,
+      "price": 1179000,
+      "dom": 18,
+      "url": null,
+      "pricePerSqft": 1302.8,
+      "z": 1.51,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-46",
+      "neighborhood": "Commercial Drive",
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1230,
+      "price": 1360000,
+      "dom": 26,
+      "url": null,
+      "pricePerSqft": 1105.7,
+      "z": 1.51,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-48",
+      "neighborhood": "Fairview",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 525,
+      "price": 589000,
+      "dom": 8,
+      "url": null,
+      "pricePerSqft": 1121.9,
+      "z": 0.3,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-50",
+      "neighborhood": "Fairview",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 1149,
+      "price": 1341000,
+      "dom": 5,
+      "url": null,
+      "pricePerSqft": 1167.1,
+      "z": 0.53,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-51",
+      "neighborhood": "Mount Pleasant",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 728,
+      "price": 802000,
+      "dom": 29,
+      "url": null,
+      "pricePerSqft": 1101.6,
+      "z": 0.18,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-53",
+      "neighborhood": "Kitsilano",
+      "beds": 1,
+      "baths": 1,
+      "sqft": 567,
+      "price": 667000,
+      "dom": 15,
+      "url": null,
+      "pricePerSqft": 1176.4,
+      "z": 0.63,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-54",
+      "neighborhood": "Downtown",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 932,
+      "price": 1018000,
+      "dom": 24,
+      "url": null,
+      "pricePerSqft": 1092.3,
+      "z": -0.01,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-55",
+      "neighborhood": "Downtown",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 850,
+      "price": 1207000,
+      "dom": 3,
+      "url": null,
+      "pricePerSqft": 1420,
+      "z": 2.36,
+      "dealScore": 0
+    },
+    {
+      "id": "van-1781372462005-57",
+      "neighborhood": "Kerrisdale",
+      "beds": 2,
+      "baths": 1,
+      "sqft": 746,
+      "price": 897000,
+      "dom": 11,
+      "url": null,
+      "pricePerSqft": 1202.4,
+      "z": 0.79,
       "dealScore": 0
     }
   ],
